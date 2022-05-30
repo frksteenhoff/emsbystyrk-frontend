@@ -10,7 +10,7 @@
 <div class={`container-fluid p-3 ems-section-${backgroundColor} ${showName && centerText ? 'center-text' : ''}`}>
 	<div class='container mb-4'>
 		{#if showName} 
-			<h2 class="p-3 ">{name}</h2>
+			<h2 class="pb-3 pt-3 ">{name}</h2>
 		{/if}
 		<slot></slot>
 	</div>
