@@ -9,8 +9,8 @@
 			_updatedAt: "2022-03-08T09:28:00Z",
 			name: "Test"
 		  } 
-	];*/
 	import Section from '../components/Section.svelte'
+	];*/
   </script>
 
 <!--

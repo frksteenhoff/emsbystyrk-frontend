@@ -3,7 +3,7 @@
 Frontend repository for the website EMS by STYRK. 
 
 ## Get started
-This project is built using Sveltekit and Sanity. The boilerplate for this project is forked from the [sanity-sveltekit](https://github.com/sanity-io/get-started-sanity-sveltekit) starter repo.
+This project is built using Sveltekit. The boilerplate for this project is forked from the [sanity-sveltekit](https://github.com/sanity-io/get-started-sanity-sveltekit) starter repo.
 
 Fetch repo
 
@@ -14,13 +14,13 @@ git clone
 Install dependencies
 
 ```bash
-yarn install
+npm install
 ```
 
 Run project
 
 ```bash
-yarn run dev
+npm run dev
 ```
 
 
