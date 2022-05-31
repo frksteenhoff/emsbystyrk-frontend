@@ -1,6 +1,6 @@
-# EMS by styrk
+# EMS by Styrk
 
-Frontend repository for the website EMS by STYRK. 
+Frontend repository for the website EMS by Styrk. 
 
 ## Get started
 This project is built using Sveltekit. The boilerplate for this project is forked from the [sanity-sveltekit](https://github.com/sanity-io/get-started-sanity-sveltekit) starter repo.
