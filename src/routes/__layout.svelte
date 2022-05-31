@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="/">EMS by STYRK</a>
+		<a class="navbar-brand" href="/"><img src="img/logo_no_background.png" style="width: 50px;"/> EMS by STYRK</a>
 	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
@@ -28,6 +28,9 @@
 	</footer>
 	
 	<style>
+		body {
+			font-family: Calibri,
+		}
 	  a {
 		  color: gray;
 		  text-decoration: none;
