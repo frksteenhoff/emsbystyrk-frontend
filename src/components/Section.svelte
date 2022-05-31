@@ -4,16 +4,22 @@
 		name,
 		backgroundColor = 'light',
 		showName = false,
-		centerText = false;
+		centerText = false,
+		isLandingPage = false;
 </script>
 
-<div class={`container-fluid p-3 ems-section-${backgroundColor} ${showName && centerText ? 'center-text' : ''}`}>
-	<div class='container mb-4'>
-		{#if showName} 
+<div>
+	{#if !isLandingPage}
+	<div class={`container-fluid p-3 ems-section-${backgroundColor} ${showName && centerText ? 'center-text' : ''}`}>
+		<div class='container mb-4'>
+			{#if showName} 
 			<h2 class="pb-3 pt-3 ">{name}</h2>
-		{/if}
-		<slot></slot>
+			{/if}
+			<slot></slot>
+		</div>
 	</div>
+	{/if}
+	<h2 class="pb-3 pt-3 center-text">{name}</h2>
 	<slot name="section-outside-container"></slot>
 </div>
 

@@ -19,7 +19,7 @@
 	<title>EMS by Styrk</title>
 	</sveltekit:head>
 
-	<Section name='EMS by Styrk' backgroundColor={"dark"} showName={true} centerText={true}>
+	<Section name='EMS by Styrk' backgroundColor={"dark"} showName={true} centerText={true} isLandingPage={true}>
 		<span slot="section-outside-container">
 			<img src="img/nanna.jpg" class="img-fluid img-fade-in" alt="EMS træning">
 		</span>
