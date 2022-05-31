@@ -14,6 +14,7 @@
 		{/if}
 		<slot></slot>
 	</div>
+	<slot name="section-outside-container"></slot>
 </div>
 
 <style>

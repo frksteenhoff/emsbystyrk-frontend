@@ -20,15 +20,9 @@
 	</sveltekit:head>
 
 	<Section name='EMS by Styrk' backgroundColor={"dark"} showName={true} centerText={true}>
-		<img src="img/nanna_box.jpg" class="img-fluid img-fade-in" alt="EMS træning">
-		<div class="container mt-4">
-			<div class="row">
-				<div class="col"></div>
-				<div class="col-12 col-lg-6">
-				</div>
-				<div class="col"></div>
-			</div>
-		</div>
+		<span slot="section-outside-container">
+			<img src="img/nanna.jpg" class="img-fluid img-fade-in" alt="EMS træning">
+		</span>
 	</Section>
 
 	<Section name={"Hvad er EMS?"} backgroundColor={"light"} showName={true}>
