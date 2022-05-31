@@ -19,12 +19,12 @@
 	<title>EMS by Styrk</title>
 	</sveltekit:head>
 
-	<Section name='Velkommen til EMS by STYRK' backgroundColor={"dark"} showName={true} centerText={true}>
+	<Section name='Velkommen til EMS by Styrk' backgroundColor={"dark"} showName={true} centerText={true}>
 		<div class="container mt-4">
 			<div class="row">
 				<div class="col"></div>
 				<div class="col-12 col-lg-6">
-					<img src={"img/nanna_box.jpg"} class="img-fluid img-fade-in" alt="EMS træning">
+					<img src="img/nanna_box.jpg" class="img-fluid img-fade-in" alt="EMS træning">
 				</div>
 				<div class="col"></div>
 			</div>
@@ -52,7 +52,7 @@
 		
 	</Section>
 
-	<Section name={"Hvorfor vælge EMS by STYRK?"} backgroundColor={"dark"} showName={true}>
+	<Section name={"Hvorfor vælge EMS by Styrk?"} backgroundColor={"dark"} showName={true}>
 		<!--{JSON.stringify(EMSInfo[0])}-->
 		<p>Hos EMS by STYRK er klienten i fokus. Ved første konsultation vil dine ønsker og nuværende standpunkt blive gennemgået, så vi kan tilrettelægge træningen mod dine mål. For os skal træning være sjovt og ikke noget, der bare skal overstås. Kom godt i gang med et træningsforløb og mærk på din egen krop, hvordan EMS kan give glæde til træning og gode resultater på krop og sjæl.</p>
 		
