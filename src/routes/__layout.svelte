@@ -22,8 +22,8 @@
 		<b>Kontakt for mere information og booking</b>
 		<p>Privatbesked til <a href="https://www.instagram.com/emsbystyrk/">@EMSbyStyrk</a> på Instagram <br></p>
 		<p>Send en besked på <br>
-			+45 4140 5993 eller <br>
-		  +45 2618 5312</p>
+			+45 2618 5312 eller <br>
+			+45 4140 5993 </p>
 		</div>
 	</footer>
 	
