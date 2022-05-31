@@ -18,9 +18,10 @@
 			<slot></slot>
 		</div>
 	</div>
+	{:else}
+		<h2 class="pb-3 pt-3 center-text">{name}</h2>
+		<slot name="section-outside-container"></slot>
 	{/if}
-	<h2 class="pb-3 pt-3 center-text">{name}</h2>
-	<slot name="section-outside-container"></slot>
 </div>
 
 <style>
