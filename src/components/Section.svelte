@@ -8,9 +8,9 @@
 		isLandingPage = false;
 </script>
 
-<div>
+<div class={`ems-section-${backgroundColor}`}>
 	{#if !isLandingPage}
-	<div class={`container-fluid p-3 ems-section-${backgroundColor} ${showName && centerText ? 'center-text' : ''}`}>
+	<div class={`container-fluid p-3 ${showName && centerText ? 'center-text' : ''}`}>
 		<div class='container mb-4'>
 			{#if showName} 
 			<h2 class="pb-3 pt-3 ">{name}</h2>
