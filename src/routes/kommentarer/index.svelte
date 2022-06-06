@@ -15,12 +15,12 @@
 			<li>Jeg har prøvet at minimere antal faneblade i navigationsbaren da det ellers ser ret proppet ud, er det okay?</li>
 			<li>Er det okay at jeg har slået "priser og vilkår" sammen -- ellers bliver siderne ret indholdsløse</li>
 			<li>Jeg er i tvivl om de citater vi gerne vil have på træner-siden, kan du uddybe lidt?</li>
-			<li>Jeg er igang med at flytte alt indhold fra hjemmesiden over i et CMS-system (det vil gøre det muligt for dig at rette i indholdet med det samme) har du tid til at vi gennemgår, hvordan det virker på et tidspunkt?</li>
 			<li>Hvad synes du om de nuværende farver?</li>
 			<li>Hvad synes du om fonten?</li>
 			<li>Jeg tror det ville være godt, hvis Laura's billede var mere med fokus på hendes ansigt. Der er meget forskel på jeres fremtoninger. Hvad synes du?</li>
 			<li>Jeg overvejer om jeres information/intro skal være en form for fact-sheet, så der er nogle bullet points: alder, uddannelse, passion eller noget lignende. </li>
-			<li></li>
+			<li>Jeg er igang med at flytte alt indhold fra hjemmesiden over i et CMS-system (det vil gøre det muligt for dig at rette i indholdet selv) har du tid til at vi gennemgår, hvordan det virker på et tidspunkt?</li>
+			<li>Jeg er igang med at gøre tilbuene med en udløbsdato til nogle der kun vises i den gældende periode. Det tager lidt længere tid lige at få det op at køre, men det er på vej!</li>
 			<li></li>
 		</ul>
 	</div>
