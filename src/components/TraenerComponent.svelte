@@ -13,7 +13,7 @@
 		<div class="col p-3 text-center img-fade-in intro">{intro}</div>
 	</div>
 	<div class="row">
-		<div class="col p-4">
+		<div class="col pt-4 pl-4 pr-4">
 			<img src={image} class="img-fluid img-fade-in" alt="EMS træning">
 			<h2 class="intro header text-center pt-3">{name}</h2>
 		</div>
@@ -27,54 +27,38 @@
 	</div>
 </div>
 
-<style>	p {
-		line-height: 1.75;
-	}
-	
-	div.intro, h2.intro {
-		font-family: "Calibri Light", sans-serif;
-		font-size: 30px;
-		min-height: 350px;
-	}
-
-	h2.intro {
-		min-height: 30px;
-	}
-
-	h2.intro.header {
-		font-weight: 600;
-		font-size: 40px;
+<style>
+	@media only screen and (max-width: 976px) {
+		div.intro, h2.intro {
+			min-height: 50px;
+			font-size: 25px;
+			font-family: "Calibri Light", sans-serif;
+		  }
+		  
+		  h2.intro.header {
+			font-weight: 600;
+			font-size: 40px;
+		}
 	}
 
-.img-fade-in {
-  animation: fadeIn 2s;
-  -webkit-animation: fadeIn 2s;
-  -moz-animation: fadeIn 2s;
-  -o-animation: fadeIn 2s;
-  -ms-animation: fadeIn 2s;
-}
-@keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
+	@media only screen and (min-width: 977px) {
+		p {
+			line-height: 1.75;
+		}
+		
+		div.intro, h2.intro {
+			font-family: "Calibri Light", sans-serif;
+			font-size: 25px;
+			min-height: 210px;
+		}
 
-@-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
+		h2.intro {
+			min-height: 30px;
+		}
 
-@-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-o-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-ms-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
+		h2.intro.header {
+			font-weight: 600;
+			font-size: 40px;
+		}
+	}
 </style>

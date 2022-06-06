@@ -19,18 +19,40 @@
 {#await preload()}
 	
 	{:then}
-	<Section name={section.name} backgroundColor={section.colorDark ? 'dark' : 'light'} showName={section.showName}>
-		<div class="container">
-			<div class="row mb-4">
-				<img src={imageUrl} alt="EMS træning">
+	<Section name={""} backgroundColor={"dark"} isLandingPage={true}>
+		<span slot="section-outside-container">
+			<div class="img-container">
+				<h1 class="caption top-center img-fade-in">{section[0].name}</h1>
+				<img src={imageUrl} class="img-fluid" alt="EMS træning tablet">
 			</div>
-			<div class="row">
-				<div class="col col-sm-12">
-					<BlockToText block={section[0] ? section[0].text : ''} />	
-				</div>
-			</div>
-		</div>
+		</span>
+	</Section>
+	<Section name="" backgroundColor={section.colorDark ? 'dark' : 'light'} showName={false}>
+		<BlockToText block={section[0] ? section[0].text : ''} />	
 	</Section>
 	{:catch error}
+		<p>Der skete en fejl, prøv igen</p>
 		<p>{error}</p>
 {/await}
+
+<style>
+	
+	.caption{
+		font-size: 40px;
+		font-family: 'Callibri', Tahoma, Geneva, Verdana, sans-serif;
+	}
+	.img-container {
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		text-align: center;
+		color: rgb(255, 255, 255);
+	}
+
+    .top-center {
+   		position: absolute;
+		top: 60px;
+		left: 60%;
+		transform: translate(-90%, -50%);
+}
+</style>

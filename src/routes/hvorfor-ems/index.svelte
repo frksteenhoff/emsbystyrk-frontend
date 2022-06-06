@@ -2,14 +2,16 @@
 	import BlockToText from "../../components/BlockToText.svelte";
 	import Section from '../../components/Section.svelte'
 	import { client } from '../../routes/index'
-	
+	import buildSanityImageUrl from '../../util/imageUtils'
 
-
-	let section;
+	let section, imageUrl;
 
 	const preload = async () => {
 		const query = "*[_id == 'a949f1f7-1a3b-4269-8893-53a8758b03c3']";
 		section = await client.fetch(query);
+
+		const imageRef = section[0].sectionImage.asset._ref;
+		imageUrl = buildSanityImageUrl(imageRef);	
 	}
 </script>
 
@@ -19,14 +21,14 @@
 
 <div>		
 	{#await preload()}
-		<p>Henter data</p>
+		<p>Henter data ...</p>
 	{:then}
 		<div>
 			<Section name={""} backgroundColor={"dark"} isLandingPage={true}>
 				<span slot="section-outside-container">
 					<div class="img-container">
-						<h1 class="caption top-center">{section[0].name}</h1>
-						<img src={section.sectionImage} class="img-fluid img-fade-in mb-4" alt="EMS træning">
+						<h1 class="caption top-center img-fade-in">{section[0].name}</h1>
+						<img src={imageUrl} class="img-fluid pb-4" alt="EMS træning">
 					</div>
 				</span>
 			</Section>
@@ -45,7 +47,7 @@
 <style>	
 	.caption{
 		font-size: 40px;
-		font-family: 'Callibri', Tahoma, Geneva, Verdana, sans-serif;
+		font-family: 'Callibri', sans-serif;
 	}
 	.img-container {
 		width: 100%;
@@ -57,7 +59,7 @@
 
     .top-center {
    		position: absolute;
-		top: 5%;
+		top: 60px;
 		left: 60%;
 		transform: translate(-90%, -50%);
 }

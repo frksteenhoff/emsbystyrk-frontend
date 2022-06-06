@@ -1,7 +1,8 @@
 <script>
 	import Section from './Section.svelte'
 	import TraenerComponent from "./TraenerComponent.svelte"
-	import { client } from '../routes/index.js' 
+	import { client } from '../routes/index.js'
+	import buildSanityImageUrl from '../util/imageUtils' 
 		  
 	let traenere;
 
@@ -19,10 +20,10 @@
 		<div class="container">
 			<div class="row">
 				{#each traenere as traener}
-					<div class="col col-sm-12 col-lg-6">
+					<div class="col col-12 col-lg-6">
 						<TraenerComponent
 							name={traener.navn}
-							image={traener.traenerBillede}
+							image={buildSanityImageUrl(traener.traenerBillede.asset._ref)}
 							intro={traener.intro} 	
 							mainText={traener.broedtekst}
 						/>
