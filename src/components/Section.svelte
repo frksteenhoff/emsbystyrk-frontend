@@ -19,7 +19,9 @@
 		</div>
 	</div>
 	{:else}
-		<h2 class="pb-3 pt-3 center-text">{name}</h2>
+		{#if showName}
+			<h2 class="pb-3 pt-3 center-text">{name}</h2>
+		{/if}
 		<slot name="section-outside-container"></slot>
 	{/if}
 </div>
@@ -31,12 +33,12 @@
 	.center-text {
 		text-align: center;
 	}
-	.ems-section-dark {
-		background-color: black;
-		color: white;
+	.ems-section-light {
+		background-color: white;
+		color: black;
 	}
 
-	.ems-section-light {
+	.ems-section-dark {
 		background-color: lightgray;
 		color: black;
 	}

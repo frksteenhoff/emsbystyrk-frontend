@@ -1,4 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<script>
+	import BlockToText from '../components/BlockToText.svelte'
+	import { client } from '../routes/index.js' 
+
+	let footer;
+
+	const preload = async () => {
+		const query = "*[_id == '0c6e8e27-dfd8-4101-bba1-bd8d40b09075']";
+		footer = await client.fetch(query);
+	}
+
+</script>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="/"><img src="img/logo_no_background.png" style="width: 40px;"/> EMS by Styrk</a>
 	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,37 +18,34 @@
 		</button>
 	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		<div class="navbar-nav">
-			<a class="nav-link disabled" href="hvorfor-ems">Hvorfor EMS?</a>
+		  <a class="nav-link" href="/hvad-er-ems">Hvad er EMS?</a>
+		  <a class="nav-link" href="/hvorfor-ems">Hvorfor EMS?</a>
 		  <a class="nav-link" href="/dine-traenere">Dine trænere</a>
-		  <a class="nav-link disabled" href="/forloeb">Forløb</a>
-		  <a class="nav-link disabled" href="/kontakt">Kontakt</a>
+		  <a class="nav-link" href="/priser">Priser og vilkår</a>
+		  <a class="nav-link" href="/kontakt">Kontakt</a>
 		</div>
 	  </div>
 	</div>
 </nav>
 
-<slot></slot>
+<div class="load-page">
+	<slot></slot>
+</div>
 
-<footer class="p-3" style="color: white; background-color: var(--bs-body-color); min-height: 60px;">
-	<div>
-		<b>Kontakt for mere information og booking</b>
-		<p>Privatbesked til <a href="https://www.instagram.com/emsbystyrk/">@EMSbyStyrk</a> på Instagram <br></p>
-		<p>Send en besked på <br>
-			+45 2618 5312 eller <br>
-			+45 4140 5993 </p>
-		</div>
+{#await preload()}
+	{:then}
+	<footer class="p-3" style="color: white; background-color: var(--bs-body-color); min-height: 60px;">
+		<BlockToText block={footer[0] ? footer[0].body : ''}  showInContainer={false} />
 	</footer>
-	
-	<style>
-		body {
-			font-family: Calibri,
-		}
-	  a {
-		  color: gray;
-		  text-decoration: none;
-	  }
+	{:catch error}
+		<p>{error}</p>
+{/await}
 
-	  a:hover {
-		  opacity: 0.5;
-	  }
+<style>
+	body {
+		font-family: Calibri;
+	}
+	.load-page {
+		min-height: 1000px
+	}
   </style>

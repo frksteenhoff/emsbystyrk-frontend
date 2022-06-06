@@ -4,12 +4,13 @@
 		name, 
 		image,
 		intro = 'light',
-		mainText = false;
+		mainText = '';
+
 </script>
 
 <div class='container mb-4 img-fade-in'>
 	<div class="row">
-		<div class="col p-3 text-center intro">{intro}</div>
+		<div class="col p-3 text-center img-fade-in intro">{intro}</div>
 	</div>
 	<div class="row">
 		<div class="col p-4">
@@ -18,19 +19,26 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col p-3"><p>{mainText}</p></div>
+		<div class="col p-3">
+			{#each mainText as text}
+				<p>{text.children[0].text}</p>
+			{/each}
+		</div>
 	</div>
 </div>
 
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Grape+Nuts&display=swap');
-	p {
+<style>	p {
 		line-height: 1.75;
 	}
 	
 	div.intro, h2.intro {
-		font-family: 'Grape Nuts', cursive;
+		font-family: "Calibri Light", sans-serif;
 		font-size: 30px;
+		min-height: 350px;
+	}
+
+	h2.intro {
+		min-height: 30px;
 	}
 
 	h2.intro.header {
@@ -38,7 +46,7 @@
 		font-size: 40px;
 	}
 
-	.img-fade-in {
+.img-fade-in {
   animation: fadeIn 2s;
   -webkit-animation: fadeIn 2s;
   -moz-animation: fadeIn 2s;

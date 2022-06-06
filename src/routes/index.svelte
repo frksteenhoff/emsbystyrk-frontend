@@ -1,17 +1,6 @@
 <script>
-	let EMSInfo = $$props.sektionstekst;
-	/*
-	   {
-			_createdAt: "2022-03-08T09:28:00Z",
-			_id: "1f69c53d-418a-452f-849a-e92466bb9c75",
-			_rev: "xnBg0xhUDzo561jnWODd5e",
-			_type: "forloeb",
-			_updatedAt: "2022-03-08T09:28:00Z",
-			name: "Test"
-		  } 
-	];*/
+	//let EMSInfo = $$props.sektionstekst;
 	import Section from '../components/Section.svelte'
-	import {PortableText} from '@portabletext/svelte'
   </script>
 
 <div>
@@ -19,7 +8,7 @@
 	<title>EMS by Styrk</title>
 	</sveltekit:head>
 
-	<Section name='EMS by Styrk' backgroundColor={"dark"} showName={true} centerText={true} isLandingPage={true}>
+	<Section name='EMS by Styrk' backgroundColor={"dark"} showName={false} centerText={true} isLandingPage={true}>
 		<span slot="section-outside-container">
 			<img src="img/nanna.jpg" class="img-fluid img-fade-in" alt="EMS træning">
 		</span>
