@@ -3,7 +3,7 @@
 	import { client } from '../routes/index.js'
 	
 	let forloeb;
-	let today = new Date().getTime();
+	let today = new Date();
 
 	const preload = async () => {
 		const query = "*[_type == 'forloeb']";
@@ -11,12 +11,19 @@
 	}
 
 	const stringAsDate = (date) => {
-		return new Date(date).getTime();
+		return new Date(date);
 	}
-
 
 	const isCampaignStillValid = (startDate, endDate) => {
 		return today > stringAsDate(startDate) && today < stringAsDate(endDate)
+	}
+
+	const noTimeRestriction = (campaign) => {
+		// If none of the dates exists in the campaign object
+		if((!!campaign.startDate && !!campaign.endDate) === false) {
+			return true;
+		} 
+		return false;
 	}
 
 </script>
@@ -25,11 +32,10 @@
 <Section name="Forløb" backgroundColor="light" showName={true}>
 	<div class="container">
 		{#await preload()}
-			<p>Henter data</p>
+			<p>Henter forløb ...</p>
 		{:then}
 			{#each forloeb as enhed}
-				{#if (!enhed.startDate !== "" || !enhed.endDate !== "") || 
-					(enhed.startDate && enhed.endDate && isCampaignStillValid(enhed.startDate, enhed.endDate))}
+				{#if noTimeRestriction(enhed) || isCampaignStillValid(enhed.startDate, enhed.endDate)}
 					<div class="row">
 						<div class="col col-xs-12 col-lg-8">
 							<div class="card mb-4">
@@ -41,7 +47,7 @@
 												<p>{pricePair.description}</p>
 											</div>
 											<div class="col col-auto end">
-												<p>{pricePair.price} {pricePair.currency}</p>
+												<p>{pricePair.price === '0' ? 'Gratis' : pricePair.price + " " + pricePair.currency} </p>
 											</div>
 										</div>
 									{/each}

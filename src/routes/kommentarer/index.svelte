@@ -20,7 +20,7 @@
 			<li>Jeg tror det ville være godt, hvis Laura's billede var mere med fokus på hendes ansigt. Der er meget forskel på jeres fremtoninger. Hvad synes du?</li>
 			<li>Jeg overvejer om jeres information/intro skal være en form for fact-sheet, så der er nogle bullet points: alder, uddannelse, passion eller noget lignende. </li>
 			<li>Jeg er igang med at flytte alt indhold fra hjemmesiden over i et CMS-system (det vil gøre det muligt for dig at rette i indholdet selv) har du tid til at vi gennemgår, hvordan det virker på et tidspunkt?</li>
-			<li>Jeg er igang med at gøre tilbuene med en udløbsdato til nogle der kun vises i den gældende periode. Det tager lidt længere tid lige at få det op at køre, men det er på vej!</li>
+			<li><strike>Jeg er igang med at gøre tilbuene med en udløbsdato til nogle der kun vises i den gældende periode. Det tager lidt længere tid lige at få det op at køre, men det er på vej!</strike> Det er på plads nu.</li>
 			<li>På forsiden kunne det være godt med nogle "statements" sådan lidt nogle korte sætninger om hvad man får ud af EMS. Hvad tænker du om det?</li>
 			<li>Jeg prøver lige noget på forsiden -- hvad synes du?</li>
 		</ul>
