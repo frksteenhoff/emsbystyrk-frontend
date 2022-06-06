@@ -34,7 +34,7 @@
 
 {#await preload()}
 	{:then}
-	<footer class="p-3" style="color: white; background-color: var(--bs-body-color); min-height: 60px;">
+	<footer class="p-3 footer">
 		<BlockToText block={footer[0] ? footer[0].body : ''}  showInContainer={false} />
 	</footer>
 	{:catch error}
@@ -48,4 +48,11 @@
 	.load-page {
 		min-height: 1000px
 	}	
+
+	.footer {
+		color: white; 
+		background-color: teal; 
+		min-height: 60px;
+		font-size: 0.9em;
+	}
   </style>

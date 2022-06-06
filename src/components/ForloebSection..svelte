@@ -39,7 +39,7 @@
 								<br>
 
 								{#if enhed.campaign}
-									<a href="/kontakt" class="btn btn-info">Tag kontakt nu</a>
+									<a href="/kontakt" class="btn" style="primary-button-styling">Tag kontakt nu</a>
 								{/if}
 							</div>
 						</div>
@@ -53,3 +53,11 @@
 	</div>
 </Section>
 
+<style>
+.primary-button-styling {
+	background-color: teal;
+	color: white;
+	font-weight: bold;
+}
+
+</style>

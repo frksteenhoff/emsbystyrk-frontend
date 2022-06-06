@@ -22,7 +22,7 @@
 			<li>Jeg er igang med at flytte alt indhold fra hjemmesiden over i et CMS-system (det vil gøre det muligt for dig at rette i indholdet selv) har du tid til at vi gennemgår, hvordan det virker på et tidspunkt?</li>
 			<li>Jeg er igang med at gøre tilbuene med en udløbsdato til nogle der kun vises i den gældende periode. Det tager lidt længere tid lige at få det op at køre, men det er på vej!</li>
 			<li>På forsiden kunne det være godt med nogle "statements" sådan lidt nogle korte sætninger om hvad man får ud af EMS. Hvad tænker du om det?</li>
-			<i class="fa-solid">Her</i>
+			<li>Jeg prøver lige noget på forsiden -- hvad synes du?</li>
 		</ul>
 	</div>
 </div>
