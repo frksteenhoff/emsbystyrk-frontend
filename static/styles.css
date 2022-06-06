@@ -12,28 +12,37 @@ body {
 	-o-animation: fadeIn 2s;
 	-ms-animation: fadeIn 2s;
   }
-  @keyframes fadeIn {
-	0% {opacity:0;}
-	100% {opacity:1;}
-  }
   
-  @-moz-keyframes fadeIn {
+.img-fade-in-3 {
+	animation: fadeIn 3s;
+	-webkit-animation: fadeIn 3s;
+	-moz-animation: fadeIn 3s;
+	-o-animation: fadeIn 3s;
+	-ms-animation: fadeIn 3s;
+ }
+
+@keyframes fadeIn {
 	0% {opacity:0;}
 	100% {opacity:1;}
-  }
+}
   
-  @-webkit-keyframes fadeIn {
+@-moz-keyframes fadeIn {
 	0% {opacity:0;}
 	100% {opacity:1;}
-  }
+}
   
-  @-o-keyframes fadeIn {
+@-webkit-keyframes fadeIn {
 	0% {opacity:0;}
 	100% {opacity:1;}
-  }
+}
+ 
+@-o-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
   
-  @-ms-keyframes fadeIn {
+@-ms-keyframes fadeIn {
 	0% {opacity:0;}
 	100% {opacity:1;}
-  }
+}
   

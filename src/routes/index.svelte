@@ -10,7 +10,7 @@
 
 	<Section name='EMS by Styrk' backgroundColor={"dark"} showName={false} centerText={true} isLandingPage={true}>
 		<span slot="section-outside-container">
-			<img src="img/nanna.jpg" class="img-fluid img-fade-in" alt="EMS træning">
+			<img src="img/nanna.jpg" class="img-fluid img-fade-in-3" alt="EMS træning">
 		</span>
 	</Section>
 
