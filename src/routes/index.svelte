@@ -49,7 +49,7 @@
 			<div class="row">
 				{#each icons as icon}
 					<div class="col text-center">
-						<i class={icon.bootstrap_icon_name} role="img" aria-label="icon"></i>
+						<i class={`bi-${icon.bootstrap_icon_name}`} role="img" aria-label="icon"></i>
 						<p>{icon.text}</p>
 					</div>
 				{/each}
