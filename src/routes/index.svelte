@@ -1,7 +1,15 @@
 <script>
-	//let EMSInfo = $$props.sektionstekst;
 	import Section from '../components/Section.svelte'
-  </script>
+	import { client } from '../routes/index.js' 
+
+	let icons;
+
+	const preload = async () => {
+		const query = "*[_type == 'icon-w-text']";
+		icons = await client.fetch(query);
+	}
+
+</script>
 
 <div>
 	<sveltekit:head>
@@ -35,7 +43,25 @@
 		
 	</Section>
 
-	<Section name={"Hvorfor vælge EMS by Styrk?"} backgroundColor={"dark"} showName={true}>
+	{#await preload()}
+	{:then}
+		<Section name="" backgroundColor="dark" centerText={true}>
+			<div class="row">
+				{#each icons as icon}
+					<div class="col text-center">
+						<i class={icon.bootstrap_icon_name} role="img" aria-label="icon"></i>
+						<p>{icon.text}</p>
+					</div>
+				{/each}
+			</div>
+		</Section>
+	{:catch error}
+		<p>Der skete en fejl, prøv igen</p>
+		<p>{error}</p>
+	{/await}	
+
+
+	<Section name={"Hvorfor vælge EMS by Styrk?"} backgroundColor={"light"} showName={true}>
 		<!--{JSON.stringify(EMSInfo[0])}-->
 		<p>Hos EMS by STYRK er klienten i fokus. Ved første konsultation vil dine ønsker og nuværende standpunkt blive gennemgået, så vi kan tilrettelægge træningen mod dine mål. For os skal træning være sjovt og ikke noget, der bare skal overstås. Kom godt i gang med et træningsforløb og mærk på din egen krop, hvordan EMS kan give glæde til træning og gode resultater på krop og sjæl.</p>
 		
