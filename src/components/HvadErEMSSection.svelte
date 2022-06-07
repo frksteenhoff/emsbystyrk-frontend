@@ -22,7 +22,7 @@
 	<Section name={""} backgroundColor={"dark"} isLandingPage={true}>
 		<span slot="section-outside-container">
 			<div class="img-container">
-				<h1 class="caption top-center img-fade-in">{section[0].name}</h1>
+				<h1 class="header-shadow caption top-center img-fade-in">{section[0].name}</h1>
 				<img src={imageUrl} class="img-fluid" alt="EMS træning tablet">
 			</div>
 		</span>
@@ -36,7 +36,6 @@
 {/await}
 
 <style>
-	
 	.caption{
 		font-size: 40px;
 		font-family: 'Callibri', Tahoma, Geneva, Verdana, sans-serif;
@@ -54,5 +53,9 @@
 		top: 60px;
 		left: 60%;
 		transform: translate(-90%, -50%);
-}
+	}
+
+	.header-shadow {
+		text-shadow: 1px 1px 4px #7A7A7A;
+	}
 </style>
