@@ -1,7 +1,15 @@
+:root {
+	--accent-color: rgb(79, 155, 187);
+	--link-color: skyblue;
+	--primary-text-color: white;
+	--secondary-text-color: black;
+	--primary-container-color: white;
+	--secondary-container-color: #f1f3f6;
+}
+
 body {
 	font-family: "Calibri", sans-serif;
-	background-color: #f1f3f6;
-	color: #1c2430;
+	background-color: var(--secondary-container-color);
 	margin: 0;
 }
 

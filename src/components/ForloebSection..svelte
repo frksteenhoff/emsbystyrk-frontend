@@ -75,8 +75,8 @@
 
 <style>
 .primary-button-styling {
-	background-color: teal;
-	color: white;
+	background-color: var(--accent-color);
+	color: var(--primary-text-color);
 }
 
 </style>

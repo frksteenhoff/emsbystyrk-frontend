@@ -34,12 +34,12 @@
 		text-align: center;
 	}
 	.ems-section-light {
-		background-color: white;
-		color: black;
+		background-color: var(--primary-text-color);
+		color: (--secondary-text-color);
 	}
 
 	.ems-section-dark {
-		background-color: lightgray;
-		color: black;
+		background-color: var(--secondary-container-color);
+		color: var(--secondary-text-color);
 	}
 </style>

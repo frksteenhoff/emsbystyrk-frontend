@@ -50,8 +50,8 @@
 	}	
 
 	.footer {
-		color: white; 
-		background-color: teal; 
+		color: var(--primary-text-color); 
+		background-color: var(--accent-color); 
 		min-height: 60px;
 		font-size: 0.9em;
 	}

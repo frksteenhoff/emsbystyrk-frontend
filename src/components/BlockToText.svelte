@@ -41,7 +41,7 @@
 		font-weight: bold;
 	}
     a {
-		color: skyblue;
+		color: var(--link-color);
 		text-decoration: none;
 	}
 

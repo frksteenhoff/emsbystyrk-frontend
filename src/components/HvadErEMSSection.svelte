@@ -46,7 +46,7 @@
 		display: inline-block;
 		position: relative;
 		text-align: center;
-		color: rgb(255, 255, 255);
+		color: var(--primary-container-color);
 	}
 
     .top-center {
