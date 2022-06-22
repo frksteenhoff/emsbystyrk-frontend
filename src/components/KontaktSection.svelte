@@ -9,9 +9,8 @@
 		const query = "*[_type == 'aabningstider']";
 		aabningstider = await client.fetch(query);
 
-		const imgQuery = "*[_type == 'billede']";
+		const imgQuery = "*[_id == '49b7667c-e87b-4151-b6d6-d98d12275d82']";
 		billeder = await client.fetch(imgQuery);
-		console.log(billeder);
 	}
 
 </script> 
