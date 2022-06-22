@@ -9,5 +9,14 @@
 
 <div>
 	<ForloebSection></ForloebSection>
+	<hr>
 	<VilkaarSection></VilkaarSection>
 </div>
+
+<style>
+	hr {
+		margin: 50px;
+		color: var(--accent-color);
+		border-width: 5px;
+	}
+</style>
