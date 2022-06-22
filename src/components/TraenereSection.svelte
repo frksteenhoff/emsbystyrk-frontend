@@ -20,7 +20,7 @@
 		<div class="container">
 			<div class="row">
 				{#each traenere as traener}
-					<div class="col col-12 col-lg-6">
+					<div class="col-12 col-lg-6">
 						<TraenerComponent
 							name={traener.navn}
 							image={buildSanityImageUrl(traener.traenerBillede.asset._ref)}
