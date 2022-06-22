@@ -10,7 +10,7 @@
 
 <div class='container mb-4 img-fade-in'>
 	<div class="row">
-		<div class="col p-3 text-center img-fade-in intro">{intro}</div>
+		<div class="col p-3 text-center img-fade-in intro" style="font-style: italic;">{intro}</div>
 	</div>
 	<div class="row">
 		<div class="col pt-4 pl-4 pr-4">
@@ -49,7 +49,7 @@
 		div.intro, h2.intro {
 			font-family: "Calibri Light", sans-serif;
 			font-size: 25px;
-			min-height: 210px;
+			min-height: 220px;
 		}
 
 		h2.intro {
