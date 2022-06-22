@@ -12,7 +12,7 @@
 </script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="/"><img src="img/logo_no_background.png" style="width: 40px;"/> EMS by Styrk</a>
+		<a class="navbar-brand" href="/"><img src="img/logo_no_background.png" style="width: 40px;" alt="EMS logo" /> EMS by Styrk</a>
 	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
@@ -35,7 +35,14 @@
 {#await preload()}
 	{:then}
 	<footer class="p-3 footer">
-		<BlockToText block={footer[0] ? footer[0].body : ''}  showInContainer={false} />
+		<div class="row">
+			<div class="col">
+				<BlockToText block={footer[0] ? footer[0].body : ''}  showInContainer={false} />
+			</div>
+			<div class="col-auto p-5">
+				<img src="img/logo_no_background.png" style="width: 90px;" alt="EMS logo" />
+			</div>
+		</div>
 	</footer>
 	{:catch error}
 		<p>{error}</p>
