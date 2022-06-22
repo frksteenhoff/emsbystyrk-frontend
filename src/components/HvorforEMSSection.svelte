@@ -1,46 +1,48 @@
 <script>
 	import Section from './Section.svelte'
-	import BlockToText from './BlockToText.svelte'
-	import { client } from '../routes/index.js' 
+	import BlockToText from "./BlockToText.svelte";
+	import { client } from '../routes/index'
 	import buildSanityImageUrl from '../util/imageUtils'
 
 	let section, imageUrl;
 
 	const preload = async () => {
-		const query = "*[_id == '0eef387a-f9d4-4561-b175-7a9161d09ada']";
+		const query = "*[_id == 'a949f1f7-1a3b-4269-8893-53a8758b03c3']";
 		section = await client.fetch(query);
 
 		const imageRef = section[0].sectionImage.asset._ref;
 		imageUrl = buildSanityImageUrl(imageRef);	
 	}
-
 </script>
 
 {#await preload()}
 	<div class="base-page"></div>
 {:then}
-	<Section name={""} backgroundColor={"dark"} isLandingPage={true}>
-		<span slot="section-outside-container">
-			<div class="img-container">
-				<h1 class="header-shadow caption top-center img-fade-in">{section[0].name}</h1>
-				<img src={imageUrl} class="img-fluid" alt="EMS træning tablet">
-			</div>
-		</span>
-	</Section>
-	<Section name="" backgroundColor={section.colorDark ? 'dark' : 'light'} showName={false}>
-		<BlockToText block={section[0] ? section[0].text : ''} />	
-	</Section>
+	<div>
+		<Section name={""} backgroundColor={"dark"} isLandingPage={true}>
+			<span slot="section-outside-container">
+				<div class="img-container">
+					<h1 class="header-shadow caption top-center img-fade-in">{section[0].name}</h1>
+					<img src={imageUrl} class="img-fluid pb-4" alt="EMS træning">
+				</div>
+			</span>
+		</Section>
+		
+		<Section name="" backgroundColor={"dark"} showName={false}>
+			<BlockToText block={section[0] ? section[0].text : ''} />
+		</Section>
+	</div>
 	{:catch error}
 		<p>Der skete en fejl, prøv igen</p>
 		<p>{error}</p>
 {/await}
 
-<style>
+<style>	
 	.caption{
 		font-size: 40px;
-		font-family: 'Callibri', Tahoma, Geneva, Verdana, sans-serif;
+		font-family: 'Callibri', sans-serif;
 	}
-	
+
 	.img-container {
 		width: 100%;
 		display: inline-block;
@@ -59,4 +61,5 @@
 	.header-shadow {
 		text-shadow: 1px 1px 4px #7A7A7A;
 	}
+
 </style>

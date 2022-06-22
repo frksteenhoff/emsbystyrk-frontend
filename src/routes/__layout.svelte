@@ -65,7 +65,7 @@
 			opacity: 0.9;
 		}
 		.base-page {
-			min-height: 800px;
+			min-height: 1200px;
 		}
 		.img-fade-in {
 			animation: fadeIn 2s;
