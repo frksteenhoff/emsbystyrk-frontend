@@ -1,7 +1,9 @@
 <script>
 	import Section from './Section.svelte'
 	import { client } from '../routes/index.js'
-	import buildSanityImageUrl from '../util/imageUtils' 
+	import buildSanityImageUrl from '../util/imageUtils'
+	import BlockToText from './BlockToText.svelte' 
+	import { footerText } from '../stores.js';
 
 	let aabningstider, billeder;
 
@@ -46,7 +48,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="row mt-5"></div>
+			<div class="row mt-5">
+				<BlockToText block={$footerText[0].body} showInContainer={false}></BlockToText>
+			</div>
 			<hr>
 			<div class="row mt-5 mb-5">
 				<h2 class="no-padding mb-4">Find os her</h2>

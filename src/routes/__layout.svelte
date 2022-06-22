@@ -1,12 +1,21 @@
 <script>
 	import BlockToText from '../components/BlockToText.svelte'
 	import { client } from '../routes/index.js' 
+	import { footerText } from '../stores.js';
 
 	let footer;
 
 	const preload = async () => {
-		const query = "*[_id == '0c6e8e27-dfd8-4101-bba1-bd8d40b09075']";
-		footer = await client.fetch(query);
+		if(!isFooterInStore()) {
+			const query = "*[_id == '0c6e8e27-dfd8-4101-bba1-bd8d40b09075']";
+			footer = await client.fetch(query);
+
+			footerText.set(footer);
+		}
+	}
+
+	const isFooterInStore = () => {
+		return $footerText && Object.keys($footerText).length > 0;
 	}
 
 </script>
@@ -38,7 +47,7 @@
 	<footer class="p-3 footer">
 		<div class="row">
 			<div class="col">
-				<BlockToText block={footer[0] ? footer[0].body : ''}  showInContainer={false} />
+				<BlockToText block={$footerText && $footerText[0] ? $footerText[0].body : []}  showInContainer={false} />
 			</div>
 			<div class="col-auto p-5">
 				<img src="img/logo_no_background.png" style="width: 90px;" alt="EMS logo" />
