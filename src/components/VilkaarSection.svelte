@@ -9,7 +9,6 @@
 	const preload = async () => {
 		const query = "*[_type == 'vilkaar']";
 		vilkaar= await client.fetch(query);
-		console.log(vilkaar)
 	}
 </script>
 
