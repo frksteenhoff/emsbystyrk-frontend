@@ -17,8 +17,8 @@
 </script>
 
 {#await preload()}
-	
-	{:then}
+	<div class="base-page"></div>
+{:then}
 	<Section name={""} backgroundColor={"dark"} isLandingPage={true}>
 		<span slot="section-outside-container">
 			<div class="img-container">

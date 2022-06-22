@@ -33,7 +33,8 @@
 </div>
 
 {#await preload()}
-	{:then}
+	<div class="base-page"></div>
+{:then}
 	<footer class="p-3 footer">
 		<div class="row">
 			<div class="col">
@@ -48,6 +49,56 @@
 		<p>{error}</p>
 {/await}
 
+<!-- ONLY GLOBAL STYLING HERE -->
+<svelte:head>
+	<style>
+		img.basic:hover {
+			opacity: 0.9;
+		}
+		.base-page {
+			min-height: 800px;
+		}
+		.img-fade-in {
+			animation: fadeIn 2s;
+			-webkit-animation: fadeIn 2s;
+			-moz-animation: fadeIn 2s;
+			-o-animation: fadeIn 2s;
+			-ms-animation: fadeIn 2s;
+		}
+		.img-fade-in-3 {
+			animation: fadeIn 3s;
+			-webkit-animation: fadeIn 3s;
+			-moz-animation: fadeIn 3s;
+			-o-animation: fadeIn 3s;
+			-ms-animation: fadeIn 3s;
+		}
+
+		@keyframes fadeIn {
+			0% {opacity:0;}
+			100% {opacity:1;}
+		}
+		
+		@-moz-keyframes fadeIn {
+			0% {opacity:0;}
+			100% {opacity:1;}
+		}
+		
+		@-webkit-keyframes fadeIn {
+			0% {opacity:0;}
+			100% {opacity:1;}
+		}
+		
+		@-o-keyframes fadeIn {
+			0% {opacity:0;}
+			100% {opacity:1;}
+		}
+		
+		@-ms-keyframes fadeIn {
+			0% {opacity:0;}
+			100% {opacity:1;}
+		}
+	</style>
+</svelte:head>
 <style>
 	body {
 		font-family: Calibri;

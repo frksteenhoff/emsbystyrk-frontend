@@ -14,8 +14,8 @@
 </script> 
 
 {#await preload()}
-	<!-- do nothing -->
-	{:then}
+	<div class="base-page"></div>
+{:then}
 	<Section name="Dine trænere" backgroundColor="light" showName={false}>
 		<div class="container">
 			<div class="row">

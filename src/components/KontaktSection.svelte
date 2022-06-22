@@ -16,13 +16,13 @@
 </script> 
 
 {#await preload()}
-	<!-- do nothing -->
+	<div class="base-page"></div>
 {:then}
 	<Section name="Kontakt" backgroundColor="light" showName={true}>
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<img class="img-fluid" src={buildSanityImageUrl(billeder[0].image.asset._ref)} alt="Venteværelse" />
+					<img class="img-fluid basic" src={buildSanityImageUrl(billeder[0].image.asset._ref)} alt="Venteværelse" />
 				</div>
 				<div class="col-1"></div>
 				<div class="col col-xs-12 col-md-4">
@@ -66,9 +66,6 @@
 		padding: 0;
 	}
 
-	img:hover {
-		opacity: 0.9;
-	}
 	hr {
 		color: var(--accent-color);
 		border-width: 5px;

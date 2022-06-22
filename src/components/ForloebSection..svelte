@@ -75,7 +75,7 @@
 					{/each}
 				</div>
 				<div class="col ml-auto">
-					<img class="img-fluid" src={buildSanityImageUrl(billede[0].image.asset._ref)} alt="Træeningsdragter" />
+					<img class="img-fluid basic" src={buildSanityImageUrl(billede[0].image.asset._ref)} alt="Træeningsdragter" />
 				</div>
 			</div>
 		{:catch error}

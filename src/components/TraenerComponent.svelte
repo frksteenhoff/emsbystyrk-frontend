@@ -14,7 +14,7 @@
 	</div>
 	<div class="row">
 		<div class="col pt-4 pl-4 pr-4">
-			<img src={image} class="img-fluid img-fade-in" alt="EMS træning">
+			<img src={image} class="img-fluid img-fade-in basic" alt="EMS træning">
 			<h2 class="intro header text-center pt-3">{name}</h2>
 		</div>
 	</div>

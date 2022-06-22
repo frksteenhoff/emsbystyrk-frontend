@@ -21,7 +21,7 @@
 
 <div>		
 	{#await preload()}
-		<p>Henter data ...</p>
+		<div class="base-page"></div>
 	{:then}
 		<div>
 			<Section name={""} backgroundColor={"dark"} isLandingPage={true}>

@@ -14,6 +14,7 @@
 
 
 {#await preload()}
+	<div class="base-page"></div>
 {:then}
 	<Section name={vilkaar[0].name} showName={true}>
 		<div class="container">

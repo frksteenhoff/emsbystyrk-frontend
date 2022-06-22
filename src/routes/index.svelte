@@ -44,6 +44,7 @@
 	</Section>
 
 	{#await preload()}
+		<div class="base-page"></div>
 	{:then}
 		<Section name="" backgroundColor="dark" centerText={true}>
 			<div class="row">
