@@ -2,7 +2,7 @@
 	export let block, showInContainer = true;
 </script>
 
-{#if showInContainer}
+{#if showInContainer && block.length > 0}
 <div class='container mb-4 img-fade-in'>
 	<div class="row">
 		<div class="col p-3">
@@ -28,9 +28,11 @@
 </div>
 {:else}
 	{#each block as part}
-		{#if part.listItem && part.children.length <= 1}
-			<p>{@html '&bull;'} {part.children[0].text}</p>
-		{:else}
+	<div class="row">
+		<div class="col">
+			{#if part.listItem && part.children.length <= 1}
+				<p>{@html '&bull;'} {part.children[0].text}</p>
+			{:else}
 			{#if part.children.length > 1}
 				{#each part.children as sentence}
 					<!-- check for whether we are working with a link -->
@@ -43,8 +45,10 @@
 			{:else}
 				<p class={part.children[0].marks[0] === 'strong' ? 'bold' : ''}>{part.children[0].text}</p>
 			{/if}
-		{/if}
-	{/each}
+			{/if}
+		</div>
+	</div>
+{/each}
 {/if}
 
 <style>
