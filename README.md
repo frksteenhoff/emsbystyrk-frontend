@@ -43,10 +43,25 @@ All associated schemas are defined in the repository[emsbystyrk](www.github.com/
 
 Content published through Sanity will be instantly available in the application. This might change in the future not to exhaust the APIs.
 
-## Svelte Store
-The Svelte store is used to avoid fetching information from the Sanity API too often. This is especially important for the footer which is added on all pages. The footer content is also used on the contact page, which is why it is saved to the store and reused rather than call on each visit.
+### What cannot be changed through Sanity?
+* Front page image
+* Tab titles
+* Nav bar items (page names)
+* Error messages
+* Alt text on images
 
+## Svelte Store
 Svelte Store docs: https://svelte.dev/tutorial/auto-subscriptions
+
+In this project, the Svelte store is used to avoid fetching information from the Sanity API too often. This is especially important for the footer which is added on all pages. The footer content is also used on the contact page, which is why it is saved to the store and reused rather than call on each visit.
+
+### Current store objects
+| Store object name | Description | Comment |
+|--|--|--|
+| `footerText` | Footer content | See structure in Sanity |
+| `whyEMSObj` | Hvad er EMS information | See structure in Sanity |
+| `whatIsEMSObj` | Hvorfor EMS information | See structure in Sanity |
+
 
 ## Colors
 All colors are defined in `styles.css`. Throughout the project, we stick to the variables defined here. This way, we avoid having changing definitions and colors throughout the code base. 
