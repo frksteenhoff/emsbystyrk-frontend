@@ -3,14 +3,21 @@
 	import BlockToText from "./BlockToText.svelte";
 	import { client } from '../routes/index'
 	import buildSanityImageUrl from '../util/imageUtils'
+    import { whyEMSObj } from '../stores.js'
+    import hasValues from '../util/utils'
 
-	let section, imageUrl;
+	let imageUrl;
 
 	const preload = async () => {
-		const query = "*[_id == 'a949f1f7-1a3b-4269-8893-53a8758b03c3']";
-		section = await client.fetch(query);
+        if(!hasValues($whyEMSObj)) {
+			const whyEMSQuery = "*[_id == 'a949f1f7-1a3b-4269-8893-53a8758b03c3']";
+			let whySection = await client.fetch(whyEMSQuery);
+			
+			// Add why ems section to store 
+			whyEMSObj.set(whySection);
+		}
 
-		const imageRef = section[0].sectionImage.asset._ref;
+		const imageRef = $whyEMSObj[0].sectionImage.asset._ref;
 		imageUrl = buildSanityImageUrl(imageRef);	
 	}
 </script>
@@ -22,14 +29,14 @@
 		<Section name={""} backgroundColor={"dark"} isLandingPage={true}>
 			<span slot="section-outside-container">
 				<div class="img-container">
-					<h1 class="header-shadow caption top-center img-fade-in">{section[0].name}</h1>
+					<h1 class="header-shadow caption top-center img-fade-in">{$whyEMSObj[0].name}</h1>
 					<img src={imageUrl} class="img-fluid pb-4" alt="EMS træning">
 				</div>
 			</span>
 		</Section>
 		
 		<Section name="" backgroundColor={"dark"} showName={false}>
-			<BlockToText block={section[0] ? section[0].text : ''} />
+			<BlockToText block={$whyEMSObj[0] ? $whyEMSObj[0].text : ''} />
 		</Section>
 	</div>
 	{:catch error}

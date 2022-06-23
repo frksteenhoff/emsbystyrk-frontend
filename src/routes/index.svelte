@@ -1,12 +1,32 @@
 <script>
 	import Section from '../components/Section.svelte'
+	import BlockToText from '../components/BlockToText.svelte'
 	import { client } from '../routes/index.js' 
+	import { whyEMSObj, whatIsEMSObj } from '../stores.js'
+	import hasValues from '../util/utils'
 
 	let icons;
 
 	const preload = async () => {
 		const query = "*[_type == 'icon-w-text']";
 		icons = await client.fetch(query);
+
+
+		if(!hasValues($whyEMSObj)) {
+			const whyEMSQuery = "*[_id == 'a949f1f7-1a3b-4269-8893-53a8758b03c3']";
+			let whySection = await client.fetch(whyEMSQuery);
+			
+			// Add why ems section to store 
+			whyEMSObj.set(whySection);
+		}
+
+		if(!hasValues($whatIsEMSObj)) {
+			const whatIsEMSQuery = "*[_id == '0eef387a-f9d4-4561-b175-7a9161d09ada']";
+			let whatSection = await client.fetch(whatIsEMSQuery);
+			
+			// Add what is ems section to store 
+			whatIsEMSObj.set(whatSection);
+		}
 	}
 
 </script>
@@ -22,49 +42,30 @@
 		</span>
 	</Section>
 
-	<Section name={"Hvad er EMS?"} backgroundColor={"light"} showName={true}>
-		<!--{JSON.stringify(EMSInfo[0])}-->
-
-		<p>EMS står for Elektronisk Muskel-Stimulering, hvilket indebærer at elektroder stimulerer og aktiverer dine muskelgrupper. Dette gør det muligt at træne hele kroppen på samme tid og gennemføre en træningssession på bare 20 min. 1 EMS-træningssession på 20 min svarer til 90 min intensiv HIT træning, da elektroderne gør det muligt at øge intensiteten med op til 80%.</p>
-
-		<p>Ønsker du at kickstarte et træningsforløb med EMS, og både mærke og se resultater af denne træning på din egen krop, så kontakt os og aftal en prøvetime for at se, om det er noget for dig.</p>
-		
-		<p><b>Hvorfor vælge EMS?</b></p>
-		<ul>
-			<li>Effektiv træning med øget intensitet</li>
-			<li>Øger muskelmassen</li>
-			<li>Øger fedtforbrændingen</li>
-			<li>Mindsker cellulitis (appelsinhud)</li>
-			<li>Forebygger og afhjælper skader</li>
-			<li>Minimum belastning af muskler og led</li>
-			<li>Tidsbesparing (kun 20 min træning)</li>
-			<li>Personlig træning og skræddersyet program</li>
-		</ul>
-		
-	</Section>
-
 	{#await preload()}
 		<div class="base-page"></div>
 	{:then}
+		<Section name="" backgroundColor={$whatIsEMSObj.colorDark ? 'dark' : 'light'} showName={false}>
+			<BlockToText block={$whatIsEMSObj[0] ? $whatIsEMSObj[0].text : ''} />	
+		</Section>
+	
 		<Section name="" backgroundColor="dark" centerText={true}>
 			<div class="row">
 				{#each icons as icon}
-					<div class="col text-center">
-						<i class={`bi-${icon.bootstrap_icon_name}`} style="font-size: 6rem; color: var(--accent-color);" aria-label="icon"></i>
-						<p><b>{icon.text}</b></p>
-					</div>
+				<div class="col text-center">
+					<i class={`bi-${icon.bootstrap_icon_name}`} style="font-size: 6rem; color: var(--accent-color);" aria-label="icon"></i>
+					<p><b>{icon.text}</b></p>
+				</div>
 				{/each}
 			</div>
+		</Section>
+		
+		<Section name={$whyEMSObj[0].name} backgroundColor={$whyEMSObj.colorDark ? 'dark' : 'light'} showName={true}>
+			<BlockToText block={$whyEMSObj[0] ? $whyEMSObj[0].text : ''} />
 		</Section>
 	{:catch error}
 		<p>Der skete en fejl, prøv igen</p>
 		<p>{error}</p>
 	{/await}	
 
-
-	<Section name={"Hvorfor vælge EMS by Styrk?"} backgroundColor={"light"} showName={true}>
-		<!--{JSON.stringify(EMSInfo[0])}-->
-		<p>Hos EMS by STYRK er klienten i fokus. Ved første konsultation vil dine ønsker og nuværende standpunkt blive gennemgået, så vi kan tilrettelægge træningen mod dine mål. For os skal træning være sjovt og ikke noget, der bare skal overstås. Kom godt i gang med et træningsforløb og mærk på din egen krop, hvordan EMS kan give glæde til træning og gode resultater på krop og sjæl.</p>
-		
-	</Section>
 </div>

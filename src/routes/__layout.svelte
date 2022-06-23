@@ -2,20 +2,17 @@
 	import BlockToText from '../components/BlockToText.svelte'
 	import { client } from '../routes/index.js' 
 	import { footerText } from '../stores.js';
+	import hasValues from '../util/utils';
 
 	let footer;
 
 	const preload = async () => {
-		if(!isFooterInStore()) {
+		if(!hasValues($footerText)) {
 			const query = "*[_id == '0c6e8e27-dfd8-4101-bba1-bd8d40b09075']";
 			footer = await client.fetch(query);
 
 			footerText.set(footer);
 		}
-	}
-
-	const isFooterInStore = () => {
-		return $footerText && Object.keys($footerText).length > 0;
 	}
 
 </script>

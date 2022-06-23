@@ -3,7 +3,7 @@
 	import { client } from '../routes/index.js'
 	import buildSanityImageUrl from '../util/imageUtils'
 	import BlockToText from './BlockToText.svelte' 
-	import { footerText } from '../stores.js';
+	import { footerText } from '../stores.js'
 
 	let aabningstider, billeder;
 
